@@ -12,3 +12,4 @@ return {
     vim.cmd("let test#strategy = 'vimux'")
   end,
 }
+
