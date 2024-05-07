@@ -7,10 +7,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.background = "dark"
-vim.opt.guicursor = ""
 vim.opt.swapfile = false
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 10
+
+
+vim.opt.guicursor = ""
+vim.opt.cursorline = true
+--vim.opt.cursorcolumn = true
 
 vim.opt.nu = true
 vim.opt.rnu = true
