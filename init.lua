@@ -18,7 +18,6 @@ require("lazy").setup("plugins")
 
 --Highlight when yanking text
 --cmd `yap`
-
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking text',
   group = vim.api.nvim_create_augroup('highlight-yank', {clear = true}),
