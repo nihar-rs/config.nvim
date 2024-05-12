@@ -44,12 +44,13 @@ return {
         capabilities = capabilities,
       })
 
-      -- TODO: Figureout prettier integration.
-      --[[
-      lspconfig.prettier.setup({
+      lspconfig.pyright.setup({
         capabilities = capabilities,
       })
-      ]]
+
+      lspconfig.ruff.setup({
+        capabilities = capabilities,
+      })
 
       vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
