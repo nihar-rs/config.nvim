@@ -22,7 +22,7 @@ vim.opt.rnu = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- Navigate vim panes better
