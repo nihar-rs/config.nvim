@@ -21,7 +21,7 @@ return {
       local lspconfig = require("lspconfig")
       local util = require("lspconfig.util")
 
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
       })
 
