@@ -1,5 +1,11 @@
 {
     "diagnostics.globals": [
-        "vim"
+        "vim",
+        "bin",
+        "share",
+        "jdtls",
+        "mason",
+        "nvim",
+        "local"
     ]
 }
