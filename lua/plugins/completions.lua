@@ -2,9 +2,15 @@ return {
   {
     "hrsh7th/cmp-nvim-lsp",
   },
-  { "github/copilot.vim" },
   {
-    "L3MON4D3/LuaSnip",
+    "github/copilot.vim",
+    config = function()
+      -- vim.g.copilot_enabled = false
+      vim.cmd("Copilot disable") -- Ensures Copilot is actually off
+    end,
+  },
+  {
+    "l3mon4d3/luasnip",
     dependencies = {
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
@@ -23,47 +29,28 @@ return {
       cmp.setup({
         snippet = {
           expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-            luasnip.lsp_expand(args.body)
+            luasnip.lsp_expand(args.body) -- Fixed duplicate call
           end,
         },
         completion = { completeopt = "menu,menuone,noinsert" },
+
         mapping = cmp.mapping.preset.insert({
-          ["<C-n>"] = cmp.mapping.select_next_item(), -- Select the [n]ext item
-          ["<C-p>"] = cmp.mapping.select_prev_item(), -- Select the [p]revious item
-
-          -- Scroll the documentation window [b]ack / [f]orward
-          ["<C-b>"] = cmp.mapping.scroll_docs(-4),
-          ["<C-f>"] = cmp.mapping.scroll_docs(4),
-
-          ["<C-e>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }),
-
-          --  This will auto-import if your LSP supports it.
-          --  This will expand snippets if the LSP sent a snippet.
-          ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-          ["<C-Space>"] = cmp.mapping.complete({}),
-
-          ["<C-l>"] = cmp.mapping(function()
-            if luasnip.expand_or_locally_jumpable() then
-              luasnip.expand_or_jump()
-            end
-          end, { "i", "s" }),
-          ["<C-h>"] = cmp.mapping(function()
-            if luasnip.locally_jumpable(-1) then
-              luasnip.jump(-1)
-            end
-          end, { "i", "s" }),
+          ["<c-n>"] = cmp.mapping.select_next_item(), -- select the [n]ext item
+          ["<c-p>"] = cmp.mapping.select_prev_item(), -- select the [p]revious item
+          ["<c-b>"] = cmp.mapping.scroll_docs(-4), -- scroll docs back
+          ["<c-f>"] = cmp.mapping.scroll_docs(4), -- scroll docs forward
+          ["<c-e>"] = cmp.mapping.abort(),
+          ["<cr>"] = cmp.mapping.confirm({ select = true }),
         }),
-        
+
         window = {
-          completion = cmp.config.window.bordered(),
-          documentation = cmp.config.window.bordered(),
+          -- completion = cmp.config.window.bordered(),
+          -- documentation = cmp.config.window.bordered()
         },
 
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
-          { name = "luasnip" }, -- For luasnip users.
+          { name = "luasnip" }, -- for luasnip users
           { name = "buffer" },
           { name = "path" },
         }),
@@ -72,9 +59,18 @@ return {
           format = lspkind.cmp_format({
             maxwidth = 50,
             ellipsis_char = "...",
+            mode = "symbol_text",
+            menu = {
+              buffer = "[buf]",
+              nvim_lsp = "[lsp]",
+              nvim_lua = "[api]",
+              path = "[path]",
+              luasnip = "[snip]",
+            },
           }),
         },
       })
     end,
   },
 }
+
