@@ -62,7 +62,6 @@ return {
 					filetypes = { "c" },
 				},
 			}
-			local util = require("lspconfig.util")
 
 			lspconfig.html.setup({
 				capabilities = capabilities,
