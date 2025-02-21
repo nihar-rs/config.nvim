@@ -45,10 +45,14 @@ return {
 				}),
 
 				window = {
-					-- TODO: Fix the Padding Issue.
-
-					-- completion = cmp.config.window.bordered(),
-					-- documentation = cmp.config.window.bordered(),
+					completion = cmp.config.window.bordered({
+            border = "rounded",
+            winhighlight = "Normal:EndOfBuffer,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None"
+          }),
+					documentation = cmp.config.window.bordered({
+            border = "rounded",
+            winhighlight = "Normal:EndOfBuffer,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None"
+          }),
 				},
 
 				sources = cmp.config.sources({
