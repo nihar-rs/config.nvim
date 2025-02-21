@@ -15,6 +15,7 @@ vim.opt.sidescrolloff = 10
 vim.opt.guicursor = ""
 vim.opt.cursorline = true
 --vim.opt.cursorcolumn = true
+-- vim.cmd([[ set colorcolumn=170 ]])
 
 vim.opt.nu = true
 vim.opt.rnu = true

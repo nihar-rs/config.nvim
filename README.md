@@ -1,4 +1,4 @@
-## Neovim Dotfiles ##
+## Neovim Dotfiles
 Welcome to my Neovim configuration repository! This repository contains my personal setup for Neovim, below, you'll find details about the features, plugins, and instructions to setup this configuration on your machine(Maynot actually work on your machine!).
 
 ---
