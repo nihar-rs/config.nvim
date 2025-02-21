@@ -51,7 +51,8 @@ return {
           }),
 					documentation = cmp.config.window.bordered({
             border = "rounded",
-            winhighlight = "Normal:EndOfBuffer,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None"
+            winhighlight = "Normal:SpecialKey,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None"
+            -- winhighlight = "Normal:SpecialKey,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None"
           }),
 				},
 
