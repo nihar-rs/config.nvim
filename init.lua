@@ -17,13 +17,14 @@ require("vim-options")
 require("lazy").setup("plugins")
 
 --Highlight when yanking text
---cmd `yap`
+-- NOTE: cmd `yap || yip`
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking text",
   group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
   callback = function()
-    vim.highlight.on_yank()
+    vim.highlight.on_yank({
+      higroup = "Substitute",
+      timeout = 100,
+    })
   end,
 })
-
-
