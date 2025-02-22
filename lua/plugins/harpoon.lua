@@ -2,18 +2,27 @@ return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
   config = function()
-    local harpoon = require "harpoon"
-    harpoon:setup()
+    local harpoon = require("harpoon").setup({})
+    local toggle_opts = {
+      border = "rounded",
+      title_pos = "center",
+      ui_width_ratio = 0.60,
+      border_highlight = "Select",
+      winhighlight = "NormalFloat:SpecialKey,FloatBorder:EndOfBuffer",
+    }
+
+    -- Set custom border color
+    vim.api.nvim_set_hl(0, "NormalFloat", { bold = true })
+    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#282828" })
 
     vim.keymap.set("n", "<leader>ha", function()
       harpoon:list():add()
     end)
     vim.keymap.set("n", "<leader>hm", function()
-      harpoon.ui:toggle_quick_menu(harpoon:list())
+      harpoon.ui:toggle_quick_menu(harpoon:list(), toggle_opts)
     end)
 
-    -- Set <space>1..<space>5 be my shortcuts to moving to the files
-    for _, idx in ipairs { 1, 2, 3, 4, 5 } do
+    for _, idx in ipairs({ 1, 2, 3, 4, 5 }) do
       vim.keymap.set("n", string.format("<space>%d", idx), function()
         harpoon:list():select(idx)
       end)
