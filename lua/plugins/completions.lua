@@ -46,14 +46,13 @@ return {
 
 				window = {
 					completion = cmp.config.window.bordered({
-            border = "rounded",
-            winhighlight = "Normal:EndOfBuffer,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None"
-          }),
+						border = "rounded",
+						winhighlight = "Normal:EndOfBuffer,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None",
+					}),
 					documentation = cmp.config.window.bordered({
-            border = "rounded",
-            winhighlight = "Normal:SpecialKey,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None"
-            -- winhighlight = "Normal:SpecialKey,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None"
-          }),
+						border = "rounded",
+						winhighlight = "Normal:SpecialKey,FloatBorder:EndOfBuffer,Cursorline:PmenuKindSel,Search:None",
+					}),
 				},
 
 				sources = cmp.config.sources({
