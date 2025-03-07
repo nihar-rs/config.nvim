@@ -26,28 +26,12 @@ return {
 			local lspconfig = require("lspconfig")
 			local servers = {
 				bashls = true,
-				gopls = {
-					settings = {
-						gopls = {
-							hints = {
-								assignVariableTypes = true,
-								compositeLiteralFields = true,
-								compositeLiteralTypes = true,
-								constantValues = true,
-								functionTypeParameters = true,
-								parameterNames = true,
-								rangeVariableTypes = true,
-							},
-						},
-					},
-				},
 				lua_ls = {
 					server_capabilities = {
 						semanticTokensProvider = vim.NIL,
 					},
 				},
 				rust_analyzer = true,
-				pyright = true,
 				ts_ls = {
 					root_dir = require("lspconfig").util.root_pattern("package.json"),
 					single_file = false,
@@ -63,25 +47,21 @@ return {
 				},
 			}
 
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities,
+      })
+
+      lspconfig.clangd.setup({
+        capabilities = capabilities,
+      })
+
 			lspconfig.html.setup({
 				capabilities = capabilities,
 			})
 
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.clangd.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.pyright.setup({
-				capabilities = capabilities,
-			})
-
-			lspconfig.ruff.setup({
-				capabilities = capabilities,
-			})
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities,
+      })
 
 			lspconfig.jdtls.setup({
 				capabilities = capabilities,

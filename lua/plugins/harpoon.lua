@@ -13,7 +13,6 @@ return {
 
     -- Set custom border color
     vim.api.nvim_set_hl(0, "NormalFloat", { bold = true })
-    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#282828" })
 
     vim.keymap.set("n", "<leader>ha", function()
       harpoon:list():add()
