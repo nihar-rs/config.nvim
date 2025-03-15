@@ -39,7 +39,7 @@ return {
 			default = { "Identifier", "#7C3AED" },
 			test = { "Identifier", "#FF00FF" },
 		},
-    pattern = [[\b(KEYWORDS):]], -- ripgrep regex
+		pattern = [[\b(KEYWORDS):]], -- ripgrep regex
 	},
 	config = function()
 		local todo_comments = require("todo-comments")
@@ -56,3 +56,15 @@ return {
 		todo_comments.setup()
 	end,
 }
+
+--Uasge:
+--[[
+--   TODO: Todo comment.
+--   NOTE: A note line.
+--   BUG: Bug here.
+--   HACK: Hacked :(
+--   PERF: Fully optimized.
+--   WARNING: Warning here.
+--   FIX: Need fixing here.
+--]]
+
