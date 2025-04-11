@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 vim.diagnostic.config({
 	virtual_text = {
-		spacing = 4,
+		spacing = 8,
 		prefix = "●",
     -- prefix = "⚠️",
 	},
@@ -40,4 +40,5 @@ vim.diagnostic.config({
 	update_in_insert = false,
 	severity_sort = true,
 })
+
 

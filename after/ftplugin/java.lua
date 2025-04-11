@@ -1,7 +1,7 @@
 -- local jdtls = require("jdtls")
 
 local function start_jdtls()
-  for _, client in pairs(vim.lsp.get_active_clients({ bufrn = 0 })) do
+  for _, client in pairs(vim.lsp.get_clients({ bufrn = 0 })) do
     if client.name == "jdtls" then
       return -- Don't start another instance
     end
