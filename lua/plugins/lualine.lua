@@ -34,7 +34,7 @@ return {
             end,
             "location",
             function()
-              return "󱑍 " .. os.date("%H:%M:%S")
+              return "󱑍 " .. os.date("%H:%M")
             end,
           },
         },
