@@ -1,5 +1,4 @@
 return {
-<<<<<<< HEAD
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -44,7 +43,6 @@ return {
 			})
 		end,
 	},
-=======
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -88,5 +86,4 @@ return {
       })
     end,
   },
->>>>>>> 5c00002ef18f4d0ee9dd5031ce0015ec0e73247b
 }
