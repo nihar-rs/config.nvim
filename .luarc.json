@@ -1,8 +1,6 @@
 {
     "diagnostics.globals": [
-<<<<<<< HEAD
         "vim"
-=======
         "vim",
         "bin",
         "share",
@@ -10,6 +8,5 @@
         "mason",
         "nvim",
         "local"
->>>>>>> 5c00002ef18f4d0ee9dd5031ce0015ec0e73247b
     ]
 }
