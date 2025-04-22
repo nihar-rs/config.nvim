@@ -10,14 +10,14 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=stable", -- latest stable release
     lazypath,
   })
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -40,15 +40,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.diagnostic.config({
   virtual_text = {
     spacing = 8,
-    prefix = function(diagnostic)
-      local msg = diagnostic.message
-      if msg:match("^%s*⚠️[●•]") then
-        return msg
-      else
-        return "● " .. msg
-        -- return = "⚠️" .. msg
-      end
-    end,
+    prefix = "●",
   },
   signs = true,
   underline = true,
