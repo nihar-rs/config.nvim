@@ -12,16 +12,16 @@ return {
 			"	  	▒█░▒█ ░▒█░░ ▒█▀█▀█     ",
 			"	  	▒█░▒█ ░▒█░░ ▒█▒█▒█     ",
 			"	  	░▀▄▄█ ░▒█░░ ▒█ ░▒█     ",
-			"───── VIM: Press Start ─────",
+			"───── VIM 󰍛 Press Start ────",
 		}
 
 		dashboard.section.buttons.val = {
 			dashboard.button("a", "  New file", ":enew<CR>"),
-			dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
-			dashboard.button("g", "  Live grep", ":Telescope live_grep<CR>"),
-			dashboard.button("h", "  Find Help", ":Telescope help_tags<CR>"),
+			dashboard.button("f", "  Find file", ":Telescope find_files<CR>"),
+			dashboard.button("g", "  Live grep", ":Telescope live_grep<CR>"),
+			dashboard.button("h", "  Find Help", ":Telescope help_tags<CR>"),
 			dashboard.button("t", "  File explorer", ":Neotree<CR>"),
-			dashboard.button("q", "  Quit", ":qa<CR>"),
+			dashboard.button("q", "󰨊  Quit", ":qa<CR>"),
 		}
 
 		dashboard.section.footer.val = {
