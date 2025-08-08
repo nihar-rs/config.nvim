@@ -29,7 +29,7 @@ return {
 						-- return "  " .. buf_clients[#buf_clients].name + string.format(" %d LSP", #buf_clients)
 						local last = buf_clients[#buf_clients].name
 						local count = #buf_clients
-						return string.format("  %s |%d", last, count)
+						return string.format("  %s [%d]", last, count)
 					end,
 					"location",
 					function()

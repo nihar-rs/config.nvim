@@ -18,6 +18,9 @@ vim.opt.guicursor = ""
 vim.opt.cursorline = true
 --vim.opt.cursorcolumn = true
 -- vim.cmd([[ set colorcolumn=170 ]])
+vim.opt.title = true
+vim.opt.titlestring = "VIM [%t]"
+
 
 vim.opt.nu = true
 vim.opt.rnu = true
